@@ -7,6 +7,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import plotly.express as px 
 import requests
+import numpy as np
 from io import BytesIO
 
 # Title of the Streamlit app
