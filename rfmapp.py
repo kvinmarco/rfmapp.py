@@ -11,6 +11,12 @@ import plotly.express as px
 st.set_page_config(page_title = 'RFM Analysis Application', page_icon=':bar_chart:')
 st.title('Customer Segmentation using RFM Analysis')
 
+# Function to load image from URL and convert to Matplotlib compatible format
+def load_image_from_url(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    return np.array(img)
+
 # File uploader
 uploaded_file = st.file_uploader("Choose an Excel file", type="xlsx")
 
@@ -96,8 +102,8 @@ if uploaded_file is not None:
     df_rfm[['Frequency', 'Monetary']] = scaler.fit_transform(df_rfm[['Frequency', 'Monetary']])
 
     # Display Scaled clusters based on frequency and monetary with background image
-    background_image_path = "https://github.com/kvinmarco/rfmapp.py/raw/main/rfmtable.png"
-    background_image = plt.imread(background_image_path)
+    background_image_url = "https://github.com/kvinmarco/rfmapp.py/raw/main/rfmtable.png"
+    background_image = load_image_from_url(background_image_url)
 
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.imshow(background_image, extent=[0, 5, 0, 5], aspect='auto', alpha=0.4)
