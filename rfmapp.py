@@ -7,6 +7,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import plotly.express as px 
 import requests
+from io import BytesIO
 
 # Title of the Streamlit app
 st.set_page_config(page_title = 'RFM Analysis Application', page_icon=':bar_chart:')
