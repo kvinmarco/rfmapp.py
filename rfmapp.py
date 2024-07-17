@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import plotly.express as px 
+import requests
 
 # Title of the Streamlit app
 st.set_page_config(page_title = 'RFM Analysis Application', page_icon=':bar_chart:')
