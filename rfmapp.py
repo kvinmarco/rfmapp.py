@@ -95,7 +95,7 @@ if uploaded_file is not None:
     df_rfm[['Frequency', 'Monetary']] = scaler.fit_transform(df_rfm[['Frequency', 'Monetary']])
 
     # Display Scaled clusters based on frequency and monetary with background image
-    background_image_path = "https://github.com/kvinmarco/rfmapp.py/blob/main/rfmtable.png"
+    background_image_path = "https://github.com/kvinmarco/rfmapp.py/raw/main/rfmtable.png"
     background_image = plt.imread(background_image_path)
 
     fig, ax = plt.subplots(figsize=(10, 6))
